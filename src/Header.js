@@ -2,8 +2,11 @@ import React from 'react'
 import './css/Header.css'
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
+
+
 
 
 
@@ -11,6 +14,16 @@ import { useStateValue } from './StateProvider';
 function Header() {
 
     const [state, dispatch] = useStateValue();
+
+    const navigate = useNavigate();
+    
+
+    function handleAuth(){
+        if(state.user){
+            auth.signOut();
+            
+        }
+    }
 
   return (
     <div className='header'>
@@ -24,10 +37,10 @@ function Header() {
         </div>
         
         <div className='header__nav'>
-            <Link to = './login'>
-                <div className='header__option'>
-                    <span className='header__optionLineOne'>Hello</span>
-                    <span className='header__optionLineTwo'>Sign in</span>
+            <Link to = {!state.user && './login'}>
+                <div onClick={handleAuth} className='header__option'>
+                    <span className='header__optionLineOne'>Hello </span>
+                    <span className='header__optionLineTwo'>{state.user ? 'Sign Out' : 'Sign In'}</span>
                 </div>
             </Link>
 

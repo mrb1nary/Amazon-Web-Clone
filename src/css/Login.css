@@ -13,4 +13,51 @@
     margin: 20px auto;
     object-fit: contain;
     
+    
+}
+
+.login__container{
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 20px;
+    gap: 25px;
+    box-shadow: 10px 20px black;
+    transition: 500ms ease-in;
+}
+
+.login__container:hover{
+   
+    box-shadow: 20px 40px black;
+}
+
+.login__container:focus{
+   
+    box-shadow: 20px 40px black;
+}
+
+.login__signinButton{
+    background: #f0c14b;
+    border-radius: 3px;
+    width: 105%;
+    height: 30px;
+    border: 1px solid;
+    margin-top: 20px;
+    border-color: #a88734 #9c7e31 #846a29;
+    
+}
+
+.login__email{
+    width: 100%;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.login__password{
+    width: 100%;
+    padding: 5px;
+    border-radius: 3px;
 }
