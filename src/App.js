@@ -11,7 +11,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  
 } from 'react-router-dom';
 
 
@@ -21,7 +21,6 @@ function App() {
 
   useEffect(()=>{
     auth.onAuthStateChanged(authUser=>{
-      console.log("The user is: ", authUser);
       if(authUser){
         //the user is logged in
         dispatch({

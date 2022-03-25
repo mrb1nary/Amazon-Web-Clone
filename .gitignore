@@ -10,6 +10,7 @@
 
 # production
 /build
+/github-readme
 
 # misc
 .DS_Store
